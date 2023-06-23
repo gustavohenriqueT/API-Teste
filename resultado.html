@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado da Comparação</title>
+</head>
+<body>
+    <h1>Resultado da Comparação</h1>
+    {% if resultado %}
+        <table>
+            <thead>
+                <tr>
+                    {% for col in resultado.columns %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for _, row in resultado.iterrows() %}
+                    <tr>
+                        {% for _, value in row.iteritems() %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Nenhum registro correspondente encontrado na tabela.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Unimed</title>
+</head>
+<body>
+    <div class='tela-login'>
+        <h1>Login</h1>
+            <form action="/login" method="POST">
+                <input type="text" id="username" placeholder="Username" name="username" required>
+                <br><br>
+                <input type="password" id="password" placeholder="Password" name="password" required>
+                <br><br>
+                {% if error_message %}
+                <div class="chatbox">
+                    <p class="error_message">{{ error_message }}</p>
+                </div>
+                {% endif %}
+                <button type="submit">Entrar</button>
+        </form>
+    </div>
+</body>
+</html>

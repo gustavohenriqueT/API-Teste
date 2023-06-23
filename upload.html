@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style1.css') }}">
+    <title>Cadastro de dados</title>
+</head>
+<body>
+    <div class="tela2">
+        <h1>Cadastro de dados</h1>
+        <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="arquivo">Selecione um arquivo XLSX:</label>
+            <input type="file" id="fileInput" name="file" accept=".xlsx, .xls" />
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="chatBox" class="chat-box">
+            <p id="resultContainer">Seus dados estão sendo processados...</p>
+        </div>
+    </div>
+</body>
+</html>
